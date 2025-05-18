@@ -22,3 +22,14 @@ class Customer:
     def create_order(self, coffee, price):
         return Order(self, coffee, price)
 
+    def most_aficionado(cls, coffee):
+        customer_spending = {}
+
+        for order in Order.all_orders():
+            if order.coffee == coffee:
+                customer = order.customer
+                customer_spending[order.customer] = customer_spending.get(order.customer, 0) + order.price
+        if not customer_spending:
+            return None
+        
+        return max(customer_spending, key=customer_spending.get)
