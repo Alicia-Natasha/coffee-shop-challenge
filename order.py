@@ -3,6 +3,10 @@ from coffee import Coffee
 
 class Order:
     def __init__(self, customer, coffee, price):
+        if not isinstance(customer, Customer):
+            raise ValueError("Customer must be an instance of Customer class")
+        if not isinstance(coffee, Coffee):
+            raise ValueError("Coffee must be an instance of Coffee class")
         if not isinstance(price, float):
             raise ValueError("Price must be a float")
         if not(1.0 <= price <= 10.0):
@@ -15,3 +19,9 @@ class Order:
     @property
     def price(self):
         return self._price
+    @property
+    def coffee(self):
+        return self._coffee
+    @property
+    def customer(self):
+        return self._customer
