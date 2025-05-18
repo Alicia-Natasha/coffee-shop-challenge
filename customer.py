@@ -18,4 +18,7 @@ class Customer:
     
     def coffees(self):
         return list({order.coffee for order in self.orders()})    
+    
+    def create_order(self, coffee, price):
+        return Order(self, coffee, price)
 
