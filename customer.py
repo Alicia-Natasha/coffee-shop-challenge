@@ -13,7 +13,7 @@ class Customer:
     def name(self):
         return self.name   
     
-    def orders(self):
+    def order(self):
         return [order for order in Order.all_orders() if order.customer == self]
     
     def coffee(self):

@@ -1,3 +1,6 @@
+from customer import Customer
+from order import Order
+
 class Coffee:
     def name(self, name):
         if not isinstance(name, str):
@@ -8,5 +11,11 @@ class Coffee:
 
     def name(self):
         return self._name
+    
+    def order(self):
+        return [order for order in Order.all_orders() if order.coffee == self]
+    
+    def customers(self):
+        return [order.customer for order in self.orders()]
     
     
