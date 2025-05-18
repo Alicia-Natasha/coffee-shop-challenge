@@ -18,6 +18,8 @@ class Order:
         self._coffee = coffee
         self._price = price
 
+        Order._all_orders.append(self)
+
     @property
     def price(self):
         return self._price

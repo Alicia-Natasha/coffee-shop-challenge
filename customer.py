@@ -11,11 +11,11 @@ class Customer:
 
     @property
     def name(self):
-        return self.name   
+        return self._name   
     
-    def order(self):
+    def orders(self):
         return [order for order in Order.all_orders() if order.customer == self]
     
-    def coffee(self):
-        return [order.coffee for order in self.orders()]    
+    def coffees(self):
+        return list({order.coffee for order in self.orders()})    
 
