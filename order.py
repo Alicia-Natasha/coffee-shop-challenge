@@ -2,6 +2,8 @@ from customer import Customer
 from coffee import Coffee
 
 class Order:
+    _all_orders = []
+
     def __init__(self, customer, coffee, price):
         if not isinstance(customer, Customer):
             raise ValueError("Customer must be an instance of Customer class")
@@ -25,3 +27,7 @@ class Order:
     @property
     def customer(self):
         return self._customer
+    
+    @classmethod
+    def all_orders(cls):
+        return cls._all_orders
