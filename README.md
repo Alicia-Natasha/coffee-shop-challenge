@@ -1,4 +1,4 @@
-# COFFEE-SHOP CODE CHALLENGE
+# Coffee Shop Challenge
 
 ## Project Structure
 coffee-shop-challenge/
@@ -41,3 +41,9 @@ price: float (1.0–10.0), immutable
 customer: Customer instance
 coffee: Coffee instance
 all_orders() → Class method to access all Order instances
+
+## Author 
+Alicia Natasha
+
+## License
+This project is licensed under the [MIT License](LICENSE).
