@@ -1,10 +1,11 @@
-from customer import Customer
-from coffee import Coffee
-
 class Order:
+    
     _all_orders = []
 
     def __init__(self, customer, coffee, price):
+        from customer import Customer
+        from coffee import Coffee
+
         if not isinstance(customer, Customer):
             raise ValueError("Customer must be an instance of Customer class")
         if not isinstance(coffee, Coffee):
